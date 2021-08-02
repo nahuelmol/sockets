@@ -1,19 +1,27 @@
+package backside;
+
 import java.net.*;
 import java.io.*;
 
-public class server {
-    public static void main(String args[]){
+public class Server {
+    public static void main(){
+
+        final Integer port = 3333;
+        System.out.println("Running socket server-side in port: "+port.toString());
+
         try {
-            ServerSocket ss = new ServerSocket(3333);
+            ServerSocket ss = new ServerSocket(port);
             Socket s = ss.accept();
         
             DataInputStream din = new DataInputStream(s.getInputStream());
         
             String  str=(String)din.readUTF();  
             System.out.println("message= " + str);  
+
             ss.close();
+
         } catch(Exception e){
-            System.out.println(e);
+            System.out.println("In class Server: "+ e);
         }
         
     }
