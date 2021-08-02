@@ -22,14 +22,24 @@ class AlertMessage implements Message {
         Dest = newDestiny;
     };
 
-    @Sender
-    public voud Sender(String newSender){
+    @Override
+    public void Sender(String newSender){
         Send = newSender;
     };
+
+    public void printModel(){
+        System.out.println("content: " + Cont);
+    }
 }
 
 public class messages {
 	public static void FirstContact(){
-		System.out.println("Hello");
+	    AlertMessage alert = new AlerMessage();
+            alert.Content("saludando");
+            alert.Sender("soy Lukas");
+            alert.Destiny("hola mama");
+
+            System.out.println("Entire message: ");
+            alert.printModel();
 	}
 }
