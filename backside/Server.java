@@ -16,7 +16,7 @@ public class Server {
             DataInputStream din = new DataInputStream(s.getInputStream());
         
             String  str=(String)din.readUTF();  
-            System.out.println("message= " + str);  
+            System.out.println(str + " connected");  
 
             ss.close();
 
